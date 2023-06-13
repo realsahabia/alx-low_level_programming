@@ -38,6 +38,7 @@ char *str_concat(char *s1, char *s2)
 			new_str[i] = s1[i];
 			i++;
 		}
+	}
 
 	if (s2)
 	{
@@ -46,6 +47,7 @@ char *str_concat(char *s1, char *s2)
 			new_str[len1 + j] = s2[j];
 			j++;
 		}
+	}
 
 	new_str[len3] = '\0';
 
