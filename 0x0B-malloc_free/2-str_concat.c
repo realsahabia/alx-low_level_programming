@@ -6,7 +6,6 @@
  * @s2: other string to concatenate
  * Return: pointer to the new string created (Success), or NULL (Error)
  */
-
 char *str_concat(char *s1, char *s2)
 {
 	char *new_str;
@@ -42,14 +41,12 @@ char *str_concat(char *s1, char *s2)
 
 	if (s2)
 	{
-	 	while (j < len2)
+		while (j < len2)
 		{
 			new_str[len1 + j] = s2[j];
 			j++;
 		}
 	}
-
 	new_str[len3] = '\0';
-
 	return (new_str);
 }
