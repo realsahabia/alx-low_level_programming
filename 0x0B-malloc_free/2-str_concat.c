@@ -12,23 +12,15 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i = 0, j = 0, len1 = 0, len2 = 0, len3;
 
 	while (s1 && s1[len1])
-	{
 		len1++;
-	}
-
 	while (s2 && s2[len2])
-	{
 		len2++;
-	}
 
 	len3 = len1 + len2 + 1;
 
 	new_str = malloc(len3 * sizeof(char));
-
 	if (new_str == NULL)
-	{
 		return (NULL);
-	}
 
 	if (s1)
 	{
@@ -38,7 +30,6 @@ char *str_concat(char *s1, char *s2)
 			i++;
 		}
 	}
-
 	if (s2)
 	{
 		while (j < len2)
