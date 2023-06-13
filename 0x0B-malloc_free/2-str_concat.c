@@ -43,5 +43,5 @@ char *str_concat(char *s1, char *s2)
 
 	new_str[len3 - 1] = '\0';
 
-	return (new_str);	
+	return (new_str);
 }
