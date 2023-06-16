@@ -30,10 +30,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		new_str[s1_index] = s1[s1_index];
 		s1_index++;
 
-	while (n >= len2 && s2_index < (len1 + len2))
+	while (n >= len2 && s1_index < (len1 + len2))
 		new_str[s1_index++] = s2[s2_index++];
 
-	while (n < len2 && s2_index < (n + len1))
+	while (n < len2 && s1_index < (n + len1))
 		new_str[s1_index++] = s2[s2_index++];
 
 	s[s1_index] = '\0';
