@@ -19,7 +19,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		len2++;
 
 	if (n >= len2)
-		new_str = malloc(sizeof(char) * (len1 + n + 1));	
+		new_str = malloc(sizeof(char) * (len1 + n + 1));
 	else
 		new_str = malloc(sizeof(char) * (len1 + len2 + 1));
 
@@ -33,7 +33,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 	while (n < len2 && s1_index < (n + len1))
 		new_str[s1_index++] = s2[s2_index++];
-		
+
 	while (n >= len2 && s1_index < (len1 + len2))
 		new_str[s1_index++] = s2[s2_index++];
 
