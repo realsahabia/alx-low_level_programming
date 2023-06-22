@@ -4,7 +4,6 @@
  *
  * Return: 1 (Success)
  */
-
 int main(void)
 {
 	write("and that piece of art is useful\"
