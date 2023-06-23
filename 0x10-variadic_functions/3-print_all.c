@@ -8,41 +8,39 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int index, specifier;
+	int index;
 	char *string, *comma = "";
 
 	va_start(args, format);
 
 	index = 0;
 
-	while ((specifier = format[index]) != '\0')
+	if (format)
 	{
-		switch (specifier)
+		while (format[index])
 		{
-			case 'c':
-				printf("%s%c", comma, va_arg(args, int));
-				break;
-			case 'i':
-				printf("%s%d", comma, va_arg(args, int));
-				break;
-			case 'f':
-				printf("%s%f", comma, va_arg(args, double));
-				break;
-			case 's':
-				string = va_arg(args, char *);
+			switch (format[index])
+			{
+				case 'c':
+					printf("%s%c", comma, va_arg(args, int));
+					break;
+				case 'i':
+					printf("%s%d", comma, va_arg(args, int));
+					break;
+				case 'f':
+					printf("%s%f", comma, va_arg(args, double));
+					break;
+				case 's':
+					string = va_arg(args, char *);
 
-				if (string == NULL)
-					printf("(nil)");
-
-				printf("%s%s", comma, string);
-				break;
-
-			default:
-				index++;
-				continue;
+					if (string == NULL)
+						string = "(nil)";
+					printf("%s%s", comma, string);
+					break;
+			}
+		comma = ",";
+		index++;
 		}
-	comma = ",";
-	index++;
 	}
 	printf("\n");
 	va_end(args);
