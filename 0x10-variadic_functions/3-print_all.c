@@ -7,13 +7,13 @@
  */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	int index;
+
+	int index = 0;
 	char *string, *comma = "";
 
-	va_start(args, format);
+	va_list args;
 
-	index = 0;
+	va_start(args, format);
 
 	if (format)
 	{
@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 				case 's':
 					string = va_arg(args, char *);
 
-					if (string == NULL)
+					if (!string)
 						string = "(nil)";
 					printf("%s%s", comma, string);
 					break;
