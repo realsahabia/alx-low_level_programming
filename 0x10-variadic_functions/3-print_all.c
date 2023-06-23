@@ -38,7 +38,7 @@ void print_all(const char * const format, ...)
 					printf("%s%s", comma, string);
 					break;
 			}
-		comma = ",";
+		comma = ", ";
 		index++;
 		}
 	}
