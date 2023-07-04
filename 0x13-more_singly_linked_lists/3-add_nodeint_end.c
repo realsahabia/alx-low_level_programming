@@ -1,7 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "lists.h"
-
 /**
  * add_nodeint_end - adds node the end of linked list.
  * @head: head node of the list.
