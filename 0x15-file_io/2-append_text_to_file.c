@@ -20,13 +20,13 @@ int append_text_to_file(const char *filename, char *text_content)
 			len++;
 	}
 
-	new_file = open(filename, O_WRONLY | O_APPEND);
-	write_content = write(new_file, text_content, len);
+	append_file = open(filename, O_WRONLY | O_APPEND);
+	write_content = write(append_file, text_content, len);
 
-	if (new_file == -1 || write_content == -1)
+	if (append_file == -1 || write_content == -1)
 		return (-1);
 
-	close(new_file);
+	close(append_file);
 
 	return (1);
 }
