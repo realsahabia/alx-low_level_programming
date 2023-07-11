@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <unistd.h>
+#include "main.h"
 /**
   * create_file - function that creates a file.
   * @filename: pointer to the file to be created.
@@ -17,7 +16,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		for (len = 0; text_content[len];)
+		while (text_content[len] != '\0')
 			len++;
 	}
 
