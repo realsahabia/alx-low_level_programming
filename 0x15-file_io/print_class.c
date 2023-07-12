@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * print_class - Prints the class of an ELF header.
  * @e_ident: A pointer to an array containing the ELF class.
