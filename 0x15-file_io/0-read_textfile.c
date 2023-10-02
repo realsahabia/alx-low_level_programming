@@ -1,9 +1,4 @@
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
-
 /**
  * read_textfile- read text file and print to STDOUT.
  * @filename: text file being read
@@ -14,39 +9,19 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	if (filename == NULL)
-	return (0);
+	char *buf;
+	ssize_t fd;
+	ssize_t wrt;
+	ssize_t t;
 
-	int fd = open(filename, O_RDONLY);
-
+	fd = open(filename, O_RDONLY);
 	if (fd == -1)
-	return (0);
+		return (0);
+	buf = malloc(sizeof(char) * letters);
+	t = read(fd, buf, letters);
+	w = write(STDOUT_FILENO, buf, t);
 
-	char *buffer = malloc(letters);
-
-	if (buffer == NULL)
-	{
+	free(buf);
 	close(fd);
-	return (0);
-	}
-
-	ssize_t bytes_read = read(fd, buffer, letters);
-
-	if (bytes_read == -1)
-	{
-	free(buffer);
-	close(fd);
-	return (0);
-	}
-
-	ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
-
-	free(buffer);
-	close(fd);
-
-	if (bytes_written == -1 || bytes_written != bytes_read)
-	return (0);
-
-	return (bytes_written);
-
+	return (w);
 }
